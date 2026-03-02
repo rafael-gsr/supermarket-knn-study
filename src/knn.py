@@ -81,4 +81,9 @@ model = KNeighborsClassifier(n_neighbors=3)
 
 model.fit(normalized, entries_labels)
 
-print(model.predict(scaler.transform(np.array([[22, 10, 2]]))))
+test_value = np.array([[22, 10, 2]])
+scaled_test_value = scaler.transform(test_value)
+
+answer = model.predict(scaled_test_value)
+
+print(answer)
